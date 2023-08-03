@@ -1,0 +1,72 @@
+@use '/src/scss/base/mixins' as m;
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2{
+        font-size: 4rem;
+        margin: 5rem;
+        color: white;
+        font-weight: bold;
+    }
+    p{
+        font-size: 3rem;
+        margin: 3rem 10rem;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    .main__container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .main__container--list{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        .main__container--buttonsP{
+            margin-bottom: 5rem ;
+            .button--previous{
+                @include m.buttonActive;
+            }
+            .button--next{
+                @include m.buttonActive;
+            }
+            .button--previousD{
+                @include m.buttonDesactive;
+            }
+            .button--nextD{
+                @include m.buttonDesactive;
+            }
+        }
+    }
+}
+
+.button-show{  
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #3a86ff;
+    box-shadow: 0 5px #4433ff;    
+    
+    &:hover {
+        box-shadow: 0 3px #4433ff;
+        top: 1px;
+    }
+    &:active {
+        box-shadow: 0 0 #4433ff;
+        top: 5px;
+    }
+}
